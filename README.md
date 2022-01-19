@@ -8,12 +8,14 @@ Examples on managing local state and global context in React
 
 ## [Component state](https://reactjs.org/docs/hooks-state.html)
 
-- [ ] [import `useState` hook](https://reactjs.org/docs/hooks-state.html#whats-a-hook)
-- [ ] [Declare a new state variable](https://reactjs.org/docs/hooks-state.html#declaring-a-state-variable)
+  NOTE: Example is in the [src/components/forms/ApplicationForm.js](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/forms/ApplicationForm.js)
+
+- [x] [import `useState` hook](https://reactjs.org/docs/hooks-state.html#whats-a-hook)
+- [x] [Declare a new state variable](https://reactjs.org/docs/hooks-state.html#declaring-a-state-variable)
 - [ ] what is the state variable
 - [ ] what is the state update function
-- [ ] [Reading State](https://reactjs.org/docs/hooks-state.html#reading-state)
-- [ ] [Updating State](https://reactjs.org/docs/hooks-state.html#updating-state)
+- [x] [Reading State](https://reactjs.org/docs/hooks-state.html#reading-state)
+- [x] [Updating State](https://reactjs.org/docs/hooks-state.html#updating-state)
 
 ## [React Context](https://reactjs.org/docs/context.html)
 
