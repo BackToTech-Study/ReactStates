@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import Button from '../button/Button';
+import UserContext from '../../contexts/UserContext';
 
 const ApplicationForm = (props) => {
+  function redirectToHomePage() {
+    window.location.href = '/';
+  }
+
+  // read the context
+  const { user, setUser } = React.useContext(UserContext);
+
+  if (user) {
+    redirectToHomePage()
+  }
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -14,18 +26,22 @@ const ApplicationForm = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('hello');
-    const user = {
+
+    const userData = JSON.stringify({
       firstName,
       lastName,
       address1,
       phone,
       email,
-    };
-    window.location.href = '/';
+    });
 
-    localStorage.setItem('user', JSON.stringify(user));
+    // context is updated here by calling the value field update function
+    setUser(userData);
+
+    // redirecting or refreshing the page will clear the context value. Reinit of the context value is done in the App.js
+    redirectToHomePage();
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-header">
@@ -119,7 +135,7 @@ const ApplicationForm = (props) => {
           </div>
         </div>
         <div className="form-footer">
-          <Button onClick={() => handleSubmit()}></Button>
+          <Button text="Join us" action={handleSubmit}></Button>
         </div>
       </div>
     </form>
