@@ -7,15 +7,20 @@
   flex-direction: column;
   align-items: center;
   flex-direction: column;
-  background: #f4f5f8 0% 0% no-repeat padding-box;
   position: relative;
 }
 .content {
   margin: auto;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 3em;
+  padding-top: 0;
+  margin-top: 0;
+  background: #f4f5f8 0% 0% padding-box;  
   position: relative;
 }
+
 .inner {
   display: flex;
 }
@@ -28,6 +33,8 @@
   border: 1px solid #707070;
   opacity: 1;
   margin: auto;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 .navbarTitle {
@@ -44,7 +51,7 @@
   padding: 0;
   margin: 0;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 /* footer styles*/
@@ -121,7 +128,6 @@ h1 {
   color: #ffe000;
 }
 a {
-  margin: 30px;
   text-decoration: none;
   display: inline-block;
 }
@@ -195,3 +201,44 @@ a {
 .form-footer {
   float: right;
 }
+
+.code-line {
+  font-weight: bold;
+  color: navy;
+}
+
+.code-section {
+  padding: 1em;
+  background-color: white;
+  font-family: monospace;
+  font-size: large;
+}
+
+.code-section > p {
+  margin: 0.3em;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+dl {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+}
+
+.highlighted {
+  font-weight: bold;
+  color: crimson;
+}
+
+.indent-1x {
+  padding-left: 2em;
+}
+
+.indent-2x {
+  padding-left: 4em;
+}
+
