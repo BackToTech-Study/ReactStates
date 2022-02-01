@@ -19,11 +19,11 @@ Examples on managing local state and global context in React
 
 ## [React Context](https://reactjs.org/docs/context.html)
 
-- [x] [Create the context](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/contexts/UserContext.js)
+- [x] [Create the context](https://github.com/BackToTech-Study/ReactStates/blob/main/src/contexts/UserContext.js)
 - [x] [Provide the context](https://github.com/BackToTech-Study/ReactStates/blob/main/src/App.js)
-- [x] [Import the context](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/components/layout/Navbar.js)
-- [x] [Use/read the context from a component](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/components/layout/Navbar.js)
-- [x] [Change the context from another component](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/components/layout/Navbar.js)
+- [x] [Import the context](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/layout/Navbar.js)
+- [x] [Use/read the context from a component](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/layout/Navbar.js)
+- [x] [Change the context from another component](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/layout/Navbar.js)
 
 ## Extra topics
 
