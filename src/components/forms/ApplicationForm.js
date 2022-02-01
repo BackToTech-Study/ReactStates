@@ -8,11 +8,6 @@ const ApplicationForm = (props) => {
   }
 
   // read the context
-  const { user, setUser } = React.useContext(UserContext);
-
-  if (user) {
-    redirectToHomePage()
-  }
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -36,7 +31,6 @@ const ApplicationForm = (props) => {
     });
 
     // context is updated here by calling the value field update function
-    setUser(userData);
 
     // redirecting or refreshing the page will clear the context value. Reinit of the context value is done in the App.js
     redirectToHomePage();
