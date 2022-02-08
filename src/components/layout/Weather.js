@@ -4,12 +4,20 @@ import useWeatherService from '../../services/WeatherService';
 const Weather = () => {  
     const cityName = "Sibiu"
 
-    const { weatherData, error } = useWeatherService(cityName)
+    const { forecast, isValidating,  error } = useWeatherService(cityName)
+
+    if (isValidating) return (
+        <div className="container">
+            <div className="applicationContent">
+                Loading weather in {cityName} ...
+            </div>
+        </div>
+    );
 
     if (error) return (
         <div className="container">
             <div className="applicationContent">
-                Failed to load weather in {cityName}. Error: {error}
+                Failed to load weather in {cityName}. {error}.
             </div>
         </div>
     );
@@ -17,7 +25,7 @@ const Weather = () => {
     return (
         <div className="container">
             <div className="applicationContent">
-                Actual data: <span>{weatherData}</span>
+                <span>{forecast.city}</span> - <span>{forecast.condition}</span>
             </div>
         </div>
     );

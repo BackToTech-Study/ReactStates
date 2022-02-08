@@ -1,21 +1,33 @@
 import useSWR from 'swr'
+import Forecast from '../models/Forecast';
+import SimulatedWeatherResponse from './DummyData'
 
 const requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
 
+function handleResponse(response) {
+    if(response.ok) 
+        return response.json()
+
+    throw `Error ${response.status}: ${response.statusText}`
+}
+
+// const weatherFetcher = (city) => 
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=888`, requestOptions)
+//     .then(handleResponse)
+    
 const weatherFetcher = (city) => 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=9c2e419efe15c4888ef4e57d1e2ed1bb`, requestOptions)
-    .then(res => res.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    new Promise(r => setTimeout(r, 2000))
+    .then(() => { return { ...SimulatedWeatherResponse, 'name': city } });
 
 function useWeatherService(city) {
-    const { data, error } = useSWR(city, weatherFetcher)
+    const { data, error, isValidating } = useSWR(city, weatherFetcher)
 
     return {
-        weather: data,
+        forecast: new Forecast(data),
+        isValidating,
         error: error
     }
 }

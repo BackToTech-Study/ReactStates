@@ -23,10 +23,13 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <p className="navbarTitle">useState & Context</p>
+          <p className="navbarTitle">useState + useContext + useSWR</p>
         </li>
         <li>
-          {linkToJoinForm}
+            <div className='account'>
+              {linkToJoinForm}
+              <p className="name-filed">{user?.FirstName}</p>
+            </div>
         </li>
       </ul>
     </div>

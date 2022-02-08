@@ -38,7 +38,7 @@
 }
 
 .navbarTitle {
-  font-size: 48px;
+  font-size: 28px;
   font-weight: bold;
   font-family: sans-serif;
   color: #f4f5f8;
@@ -242,3 +242,17 @@ dl {
   padding-left: 4em;
 }
 
+.name-filed {
+  color: white;
+}
+
+.account {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 10px;
+  flex-wrap: wrap-reverse;
+  padding: 0;
+  margin: 0;
+}
