@@ -169,7 +169,63 @@ const Welcome = (props) => {
                 <p>{"}"}</p>                
               </div>   
 
-            </dd>                    
+            </dd>   
+
+            <dt>SWR - React Hooks for Data Fetching</dt>
+            <dd>
+              <p>SWR is a strategy to first return the data from cache (stale), 
+                then send the fetch request (revalidate), and finally come with the up-to-date data.
+              </p>
+              <p>
+                Usually, we need to keep all the data fetching in the top level component and add props 
+                to every component deep down the tree. 
+                The code will become harder to maintain if we add more data dependency to the page.
+              </p>
+              <p>
+                Although we can avoid passing props using Context, 
+                there's still the dynamic content problem: 
+                components inside the page content can be dynamic, 
+                and the top level component might not know what data will be needed by its child components.
+              </p>
+            </dd>   
+
+            <dt>Install SWR</dt>
+            <dd>
+              <p>
+                SWR can be installed with <span className='code-line'>npm install swr</span>
+              </p>               
+            </dd> 
+
+            <dt>Declare the SWR fetcher</dt>
+            <dd>
+              <p>
+                For normal RESTful APIs with JSON data, first you need to create a fetcher function, 
+                which is just a wrapper of the native fetch.
+              </p>
+              <div className='code-section'>
+                <p>{"const fetcher = (...args) => fetch(...args).then(res => res.json())"}</p>              
+              </div>                 
+            </dd>   
+
+            <dt>Define a service that uses SWR</dt>
+            <dd>
+              <p>
+                To use SWR in a component just import it using <span className='code-line'>useSWR</span>.
+              </p>
+              <div className='code-section'>
+                <p>{"import useSWR from 'swr'"}</p>              
+              </div>          
+              <p>
+                Then you can import <span className='code-line'>useSWR</span> and start using it inside any function components.
+              </p>
+              <div className='code-section'>
+                <p>{"const { data, error } = useSWR('/api/user/123', fetcher)"}</p>              
+                <p>{"if (error) return <div>failed to load</div>"}</p>    
+                <p>{"if (!data) return <div>loading...</div>"}</p>    
+                <p>{"return <div>hello {data.name}!</div>"}</p>    
+              </div>                        
+            </dd>   
+
           </dl>
         </div>
         {linkToJoinForm}
