@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Welcome from './components/layout/Welcome';
 import Application from './components/layout/Application';
+import Weather from './components/layout/Weather'
 import UserContext from './contexts/UserContext'
 import User from './models/User';
 import UserInLocalStorage from './services/LocalStorage'
@@ -42,6 +43,7 @@ function App() {
           </Route>
           <Route path="/welcome" component={Welcome} />
           <Route path="/application" component={Application} />
+          <Route path="/weather" component={Weather} />
         </Switch>
       </div>
     </UserContext.Provider>
