@@ -19,13 +19,6 @@ const Welcome = (props) => {
         <div className="inner">
           <dl>
             <dt>State</dt>
-            <dd>
-              <p>
-                <Link to="https://reactjs.org/docs/hooks-reference.html#usestate" target={'_blank'}>
-                  Here is the useState Documentation
-                </Link>
-              </p>
-            </dd>
 
             <dt>State variable</dt>
             <dd>
@@ -55,11 +48,6 @@ const Welcome = (props) => {
 
             <dt>Context</dt>
             <dd>
-              <p>
-                <Link to="https://reactjs.org/docs/context.html#updating-context-from-a-nested-component" target={'_blank'}>
-                  Here is the Context Documentation
-                </Link>
-              </p>
               <p>Context provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
               <p>
                 Context is primarily used when some data needs to be accessible by many components at different nesting levels. 
