@@ -29,11 +29,11 @@ Examples on managing local state and global context in React
 - [x] SWR can be used for calling backend services. It implements a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.
 - [x] install SWR
 - [x] Declare the SWR fetcher
-- [x] Define the service with SWR <=> (Import SWR & Use SWR)
-- [x] Use the service (based on swr) in a component
+- [x] Import SWR & Use SWR
+- [x] The SWR key
+- [x] Use [mutate](https://swr.vercel.app/docs/mutation) to trigger syncronised updates
 
 ## Extra topics
-
 - [x] [Use Context sparingly because it makes component reuse more difficult](https://reactjs.org/docs/context.html#before-you-use-context)
 - [x] [Component composition](https://krasimir.gitbooks.io/react-in-patterns/content/chapter-04/)
 - [x] [Context is lost at page rerfesh or redirect](https://github.com/BackToTech-Study/ReactStates/blob/main/src/App.js)
@@ -178,7 +178,17 @@ Declare the SWR fetcher
     return <div>hello {data.name}!</div>
 ```    
 
+### Trigger update with mutate
+* The SWR object returned by useSWR also contains a mutate() function that is pre-bound to the SWR's key.
+* You can get the mutate function from the useSWRConfig() hook, and broadcast a revalidation message globally to other SWR hooks* using the same key by calling mutate(key).
+```
+  const { data, error, isValidating, mutate } = useSWR(address, engineDataFetcher);
+  ...
+  mutate();
+```
+
 Data sources:
 * https://reactjs.org/docs/hooks-reference.html#usestate
 * https://reactjs.org/docs/context.html#updating-context-from-a-nested-component
 * https://swr.vercel.app/docs/getting-started
+* https://swr.vercel.app/docs
