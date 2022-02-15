@@ -23,8 +23,15 @@ const Speedometer = () => {
 
     function updateSpeed() {
         var newSpeed = speedInputRef.current.value;
-        
-        putSpeed(address, newSpeed).then(() => { mutate() });
+
+        //do a frontend update before the updated backend data is available
+        const newData = {...data,vehicleSpeed:newSpeed}
+        mutate(newData, {revalidate:false});
+                
+        //make update call to backend then request frontend data update
+        putSpeed(address, newSpeed)
+            .then(() => { mutate() })
+            .catch(() => { mutate() });
     }
 
     return (
