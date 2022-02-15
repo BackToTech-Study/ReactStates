@@ -26,12 +26,12 @@ Examples on managing local state and global context in React
 - [x] [Change the context from another component](https://github.com/BackToTech-Study/ReactStates/blob/main/src/components/layout/Navbar.js)
 
 ## [SWR](https://swr.vercel.app/) - React Hooks for Data Fetching
-- [x] SWR can be used for calling backend services. It implements a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.
-- [x] install SWR
-- [x] Declare the SWR fetcher
-- [x] Import SWR & Use SWR
-- [x] The SWR key
-- [x] Use [mutate](https://swr.vercel.app/docs/mutation) to trigger syncronised updates
+- [ ] SWR can be used for calling backend services. It implements a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.
+- [ ] install SWR
+- [ ] Declare the SWR fetcher
+- [ ] Import SWR & Use SWR
+- [ ] The SWR key
+- [ ] Use [mutate](https://swr.vercel.app/docs/mutation) to trigger syncronised updates
 
 ## Extra topics
 - [x] [Use Context sparingly because it makes component reuse more difficult](https://reactjs.org/docs/context.html#before-you-use-context)

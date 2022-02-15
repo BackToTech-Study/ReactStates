@@ -6,25 +6,19 @@ const Speedometer = () => {
 
     const speedInputRef = useRef();
 
-    const { data, error, isValidating, mutate } = useSWR(address, engineDataFetcher);
+    //TODO use SWR here
 
     let message = ""
-    if (isValidating)
-        message = `Loading vehicle speed from ${address} ...`
-    else if (error) 
-        message = `Failed vehicle speed from ${address}. ${error}.`
-    else
-        message = `Vehile speed is: ${data.vehicleSpeed}`
+    //TODO handle SWR states here  
 
     useEffect(() => {
-        if (data)
-            speedInputRef.current.value = data.vehicleSpeed;
-    }, [data])        
+        //TODO set data from SWR here
+    }, []) //TODO bind effect to SWR data        
 
     function updateSpeed() {
         var newSpeed = speedInputRef.current.value;
-        
-        putSpeed(address, newSpeed).then(() => { mutate() });
+        putSpeed(address, newSpeed)
+        //TODO use SWR mutate to trigger data refresh
     }
 
     return (
